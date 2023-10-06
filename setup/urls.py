@@ -27,4 +27,5 @@ urlpatterns = [
     path('', views.home, name='home'), # Home
     path('List-User/', views.liste, name = 'list'), # Listing
     path('Form/', views.form, name = 'form'), # Creating
+    path('List-User/User/<int:id>', views.user, name = 'user'), # Reading
 ]+static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

@@ -48,4 +48,8 @@ def form(request):
     else:
         return render(request, 'register/form.html')
 
-    
+
+# Reading
+def user(request, id):
+    user = models.User.objects.get(id=id)
+    return render(request, 'register/user.html', {'user':user}) 

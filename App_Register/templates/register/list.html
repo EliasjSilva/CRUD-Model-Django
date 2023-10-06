@@ -1,0 +1,32 @@
+{% extends 'register/home.html' %}
+{% block content %}
+
+{% if users %}
+<div class="table-users-list">
+    <h2>USERS LIST</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Profession</th>
+            <th>Ocupation</th>
+            <th>Locate</th>
+            <th>Phone</th>
+            <th>Email</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td><a href="{% url 'user' id=user.id %}">{{user.name}}</a></td>
+            <td>{{user.profession}}</td>
+            <td>{{user.ocupation}}</td>
+            <td>{{user.locate}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.email}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% else %}
+<h2>No Users Resgistered</h2>
+{% endif %}
+
+{% endblock %}

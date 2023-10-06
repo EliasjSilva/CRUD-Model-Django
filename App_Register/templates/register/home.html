@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/app_register.css' %}">
+    <title>HOME</title>
+</head>
+<body>
+    
+    <h1>HELLO !!</h1>
+
+    <nav>
+        <a href="{% url 'form' %}">Register New User</a>
+        <a href="{% url 'list' %}">User List</a>
+        <a href="{% url 'home' %}">Home</a>
+    </nav>
+    
+{% block content %}
+
+{% endblock %}
+
+
+    <script type="text/javascript">
+        date.max = new Date().toISOString().split("T")[0];
+    </script>
+</body>
+</html>

@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=150)),
                 ('photo', models.ImageField(blank=True, null=True, upload_to='photos')),
-                ('gender', models.CharField(blank=True, choices=[('Female', 'Female'), ('Male', 'Male'), ('Other', 'Other')], max_length=100, null=True)),
+                ('gender', models.CharField(choices=[('Female', 'Female'), ('Male', 'Male'), ('Other', 'Other')], max_length=100, null=True)),
                 ('date', models.DateField()),
                 ('profession', models.CharField(choices=[('Font-end', 'Front-end'), ('Back-end', 'Back-end'), ('Full-Stack', 'Full-Stack'), ('Intern', 'Intern'), ('C.Security', 'C.Security')], max_length=100, null=True)),
                 ('ocupation', models.CharField(choices=[('Studying', 'Studying'), ('Working', 'Working'), ('Freelancer', 'Freelancer'), ('Unemployed', 'Unemployed')], max_length=100, null=True)),

@@ -6,6 +6,7 @@
     <h2>USERS LIST</h2>
     <table>
         <tr>
+            <th>Action</th>
             <th>Name</th>
             <th>Profession</th>
             <th>Ocupation</th>
@@ -15,7 +16,8 @@
         </tr>
         {% for user in users %}
         <tr>
-            <td><a href="{% url 'user' id=user.id %}">{{user.name}}</a></td>
+            <td><li><a href="{% url 'user' id=user.id %}">View</a> | <li><a href="{% url 'remove' id=user.id %}">Remove</a></td>
+            <td>{{user.name}}</a></td>
             <td>{{user.profession}}</td>
             <td>{{user.ocupation}}</td>
             <td>{{user.locate}}</td>

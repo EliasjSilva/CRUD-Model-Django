@@ -6,69 +6,69 @@ from django.db import models
 # 'choices' must be an iterable containing (actual value, human readable name) tuples.
 DEFAULT = 'No Registered'
 
-
-GENDER = (
-    ('Female', 'Female'),
-    ('Male', 'Male'),
-    ('Other', 'Other'),
-)
-
-PROFESSION = (
-    ('Font-end','Front-end'),
-    ('Back-end','Back-end'),
-    ('Full-Stack','Full-Stack'),
-    ('Intern', 'Intern'),
-    ('C.Security', 'C.Security'),
-)
-
-OCUPATION = (
-    ('Studying', 'Studying'),
-    ('Working', 'Working'),
-    ('Freelancer', 'Freelancer'),
-    ('Unemployed', 'Unemployed'),
-)
-
-TECHNOLOGIES = (
-    ['Html', 'Html'],
-    ['Css', 'Css'],
-    ['JavaScript', 'JavaScript'],
-    ['PHP', 'PHP'],
-    ['C#', 'C#'],
-    ['Python', 'Python'],
-    ['Java', 'Java'],
-)
-
-
-LOCATE = (
-    ('Acre - Rio Branco', 'Acre - Rio Branco'),
-    ('Alagoas - Maceió', 'Alagoas - Maceió'),
-    ('Amapá - Macapá', 'Amapá - Macapá'),
-    ('Amazonas - Manaus', 'Amazonas - Manaus'),
-    ('Bahia - Salvador', 'Bahia - Salvador'),
-    ('Ceará - Fortaleza', 'Ceará - Fortaleza'),
-    ('Espírito Santo - Vitória', 'Espírito Santo - Vitória'),
-    ('Goiás - Goiânia', 'Goiás - Goiânia'),
-    ('Maranhão - São Luís', 'Maranhão - São Luís'),
-    ('Mato Grosso - Cuiabá', 'Mato Grosso - Cuiabá'),
-    ('Mato Grosso do Sul - Campo Grande', 'Mato Grosso do Sul - Campo Grande'),
-    ('Minas Gerais - Belo Horizonte', 'Minas Gerais - Belo Horizonte'),
-    ('Paraíba - João Pessoa', 'Paraíba - João Pessoa'),
-    ('Pernambuco - Recife', 'Pernambuco - Recife'),
-    ('Piauí - Teresina', 'Piauí - Teresina'),
-    ('Rio de Janeiro - Rio de Janeiro', 'Rio de Janeiro - Rio de Janeiro'),
-    ('Rio Grande do Norte - Natal', 'Rio Grande do Norte - Natal'),
-    ('Rio Grande do Sul - Porto Alegre', 'Rio Grande do Sul - Porto Alegre'),
-    ('Rondônia - Porto Velho', 'Rondônia - Porto Velho'),
-    ('Roraima - Boa Vista', 'Roraima - Boa Vista'),
-    ('Santa Catarina - Florianópolis', 'Santa Catarina - Florianópolis'),
-    ('São Paulo - São Paulo', 'São Paulo - São Paulo'),
-    ('Sergipe - Aracaju', 'Sergipe - Aracaju'),
-    ('Tocantins - Palmas', 'Tocantins - Palmas'),
-    ('Distrito Federal - Brasília', 'Distrito Federal - Brasília'),
-)
-
 class User(models.Model):
     # id_user = models.AutoField(primary_key=True)
+
+    GENDER = [
+        ('Female', 'Female'),
+        ('Male', 'Male'),
+        ('Other', 'Other'),
+    ]
+
+    PROFESSION = [
+        ('Font-end','Front-end'),
+        ('Back-end','Back-end'),
+        ('Full-Stack','Full-Stack'),
+        ('Intern', 'Intern'),
+        ('C.Security', 'C.Security'),
+    ]
+
+    OCUPATION = [
+        ('Studying', 'Studying'),
+        ('Working', 'Working'),
+        ('Freelancer', 'Freelancer'),
+        ('Unemployed', 'Unemployed'),
+    ]
+
+    TECHNOLOGIES = [
+        ('Html', 'Html'),
+        ('Css', 'Css'),
+        ('JavaScript', 'JavaScript'),
+        ('PHP', 'PHP'),
+        ('C#', 'C#'),
+        ('Python', 'Python'),
+        ('Java', 'Java'),
+    ]
+
+
+    LOCATE = [
+        ('Acre - Rio Branco', 'Acre - Rio Branco'),
+        ('Alagoas - Maceió', 'Alagoas - Maceió'),
+        ('Amapá - Macapá', 'Amapá - Macapá'),
+        ('Amazonas - Manaus', 'Amazonas - Manaus'),
+        ('Bahia - Salvador', 'Bahia - Salvador'),
+        ('Ceará - Fortaleza', 'Ceará - Fortaleza'),
+        ('Espírito Santo - Vitória', 'Espírito Santo - Vitória'),
+        ('Goiás - Goiânia', 'Goiás - Goiânia'),
+        ('Maranhão - São Luís', 'Maranhão - São Luís'),
+        ('Mato Grosso - Cuiabá', 'Mato Grosso - Cuiabá'),
+        ('Mato Grosso do Sul - Campo Grande', 'Mato Grosso do Sul - Campo Grande'),
+        ('Minas Gerais - Belo Horizonte', 'Minas Gerais - Belo Horizonte'),
+        ('Paraíba - João Pessoa', 'Paraíba - João Pessoa'),
+        ('Pernambuco - Recife', 'Pernambuco - Recife'),
+        ('Piauí - Teresina', 'Piauí - Teresina'),
+        ('Rio de Janeiro - Rio de Janeiro', 'Rio de Janeiro - Rio de Janeiro'),
+        ('Rio Grande do Norte - Natal', 'Rio Grande do Norte - Natal'),
+        ('Rio Grande do Sul - Porto Alegre', 'Rio Grande do Sul - Porto Alegre'),
+        ('Rondônia - Porto Velho', 'Rondônia - Porto Velho'),
+        ('Roraima - Boa Vista', 'Roraima - Boa Vista'),
+        ('Santa Catarina - Florianópolis', 'Santa Catarina - Florianópolis'),
+        ('São Paulo - São Paulo', 'São Paulo - São Paulo'),
+        ('Sergipe - Aracaju', 'Sergipe - Aracaju'),
+        ('Tocantins - Palmas', 'Tocantins - Palmas'),
+        ('Distrito Federal - Brasília', 'Distrito Federal - Brasília'),
+    ]
+
 
     # Person
     name = models.CharField(max_length=150)

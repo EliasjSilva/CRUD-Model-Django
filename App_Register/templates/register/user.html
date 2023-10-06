@@ -1,35 +1,25 @@
 {% extends 'register/home.html' %}
+{% load static %}
+
 {% block content %}
-<div class="container">
+
+{% if user.photo %}
+<div class="img"><img src="{{user.photo.url}}" alt="imagem de {{user.name}}"> </div>
+{% else %}
+<div class="img"><img src="{% static 'imgs/user-none.svg' %}" alt="imagem de {{user.name}}"> </div>
+{% endif %}
     
-    <div class="img"><img src="{{user.photo}}" alt="imagem de {{user.name}}"> </div>
-    
-    <h3>{{user.name}}</h3>
-    <div>
-        <h3>Informações Pessoais</h3>
-        <div>
-            <div>
-                <p>Birthyear: {{user.date}}</p>
-                <p>CPF: {{user.cpf}}</p>
-            </div>
-        </div>
-    </div>
-    <div>
-        <h3>Contatos</h3>
-        <div>
-            <div>
-                <p>Email: {{user.email}}</p>
-                <p>Phone Number: {{user.phone}}</p>
-            </div>
-        </div>
-    </div>
-    <div>
-        <h3>Localidade</h3>
-        <div>
-            <p>Locate: {{user.locate}}</p>
-            <p>Adress: {{user.adress}}</p>
-        </div>
-    </div>
-</div>
+
+<h3>{{user.name}}</h3>
+<h3>Informações Pessoais</h3>
+<p>Birthyear: {{user.date}}</p>
+<p>CPF: {{user.cpf}}</p>
+<p>Email: {{user.email}}</p>
+<p>Phone Number: {{user.phone}}</p>
+<p>Locate: {{user.locate}}</p>
+<p>Adress: {{user.adress}}</p>
+<a href="{% url 'edit' id=user.id %}">Edit</a>
+<a href="{% url 'remove' id=user.id %}">Remove</a>
+<a href="{% url 'list' %}">Voltar</a>
 
 {% endblock %}

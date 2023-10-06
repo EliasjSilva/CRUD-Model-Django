@@ -1,187 +1,55 @@
 {% extends 'register/home.html' %}
     {% block content %}
-    <form action="{% url 'form' %}" method="POST" enctype="multipart/form-data" target="_self" autocomplete="on">
+    <form method="POST" enctype="multipart/form-data" target="_self" autocomplete="on">
         {% csrf_token %}
         <fieldset>
-            <legend>Person:</legend>
-            <div class="label-content">
-                <label for="name">Full Name*:</label>
-                <input type="text" id="name" name="name" minlength="15" maxlength="150" required>
-                <label for="photo">Photo:</label>
-                <input type="file" name="photo" id="photo">
-            </div>
-
-            <div class="label-content">
-                <label for="">Gender:</label>
-                <label for="">
-                    <input type="radio" name="gender" id="female" value="Female">
-                    <label for="female">Female</label>
-                    <input type="radio" name="gender" id="male" value="Male">
-                    <label for="male">Male</label>
-                    <input type="radio" name="gender" id="other" value="Other">
-                    <label for="other">Other</label>
-                </label>
-                <label for="date">Birthyear*:</label>
-                <input type="date" name="date" id="date" min="1960-12-31" required>
-            </div>
+            <legend>Perfil</legend>
+            <label for="">Photo:</label>
+            <input type="file" name="photo" id="">
+            <label for="">Nome:</label>
+            {{ form.name }}
+            <label for="">Gender:</label>
+            {{ form.gender }}
+            <label for="">Date:</label>
+            {{ form.date }}
         </fieldset>
-
 
         <fieldset>
-            <legend>Status:</legend>
-            <div class="label-content">
-                <label for="front-end">Profession*:</label>
-                <div class="profession">
-                    <label for="front-end">
-                        <input type="radio" name="profession" id="front-end" value="Front-end">
-                        <label for="front-end">Font-end</label>
-                    </label>
-                    <label for="back-end">
-                        <input type="radio" name="profession" id="back-end" value="Back-end">
-                        <label for="back-end">Back-end</label>
-                    </label>
-                    <label for="fullstack">
-                        <input type="radio" name="profession" id="fullstack" value="Full-Stack">
-                        <label for="fullstack">Full-Stack</label>
-                    </label>
-                    <label for="intern">
-                        <input type="radio" name="profession" id="intern" value="Intern">
-                        <label for="intern">Intern</label>
-                    </label>
-                    
-                    <label for="security">
-                        <input type="radio" name="profession" id="security" value="C.Security">
-                        <label for="security">C.Security</label>
-                    </label>
-                </div>
-
-                <label for="ocupation">
-                    <label for="ocupation">Ocupation*:</label>
-                    <select id="ocupation" name="ocupation" required>
-                        <option value="" hidden>Select your ocupation</option>
-                        <option value="" disabled></option>
-                        <option>Studying</option>
-                        <option>Working</option>
-                        <option>Freelancer</option>
-                        <option>Unemployed</option>
-                    </select>
-                </label>
-                
-            </div>
-            
-            <div class="label-content">
-                <label>Select the technologies you use:</label>
-                <label for="technologies">
-                    <label for="tecnologia1">
-                        <input type="checkbox" id="tecnologia1" name="technologies" value="HTML">
-                        <label for="tecnologia1"> HTML</label>
-                    </label>
-                    <label for="tecnologia2">
-                        <input type="checkbox" id="tecnologia2" name="technologies" value="CSS">
-                        <label for="tecnologia2"> CSS</label>
-                    </label>
-                    <label for="tecnologia3">
-                        <input type="checkbox" id="tecnologia3" name="technologies" value="JavaScript">
-                        <label for="tecnologia3"> JavaScript</label>
-                    </label>
-                    <label for="tecnologia4">
-                        <input type="checkbox" id="tecnologia4" name="technologies" value="PHP">
-                        <label for="tecnologia4"> PHP</label>
-                    </label>
-                    <label for="tecnologia5">
-                        <input type="checkbox" id="tecnologia5" name="technologies" value="C#">
-                        <label for="tecnologia5"> C#</label>
-                    </label>
-                    <label for="tecnologia6">
-                        <input type="checkbox" id="tecnologia6" name="technologies" value="Python">
-                        <label for="tecnologia6"> Python</label>
-                    </label>
-                    <label for="tecnologia7">
-                        <input type="checkbox" id="tecnologia7" name="technologies" value="Java">
-                        <label for="tecnologia7"> Java</label>
-                    </label>
-                </label>
-
-                <label for="experience">Tell us a little about your experience:</label>
-                <textarea rows="4" spellcheck="true" id="experience" name="experience"></textarea>
-            </div>
+            <legend>Status</legend>
+            <label for="">Profession:</label>
+            {{ form.profession }}
+            <label for="">Ocupation:</label>
+            {{ form.ocupation }}
+            <label for="">Technologies:</label>
+            {{ form.technologies }}
+            <label for="">Experience:</label>
+            {{ form.experience }}
         </fieldset>
-
 
         <fieldset>
-            <legend>Dados:</legend>
-            <div class="label-content">
-                <label for="cpf">CPF*:</label>
-                <input type="text" name="cpf" id="cpf" min="0" pattern="[0-9]{11}" required>
-                <label for="tel">Number Phone*:</label>
-                <input type="tel" name="phone" id="tel" pattern="[0-9]{11}" required>
-            </div>
-
-            <div class="label-content">
-                <label for="adress">Adress:</label>
-                <input type="text" name="adress" id="adress" maxlength="125">
-                <label for="locate">
-                    <label for="locate">Locate*:</label>
-                    <select id="locate" name="locate" required>
-                        <option value="" hidden>Select your Locate</option>
-                        <option value="" disabled></option>
-                        <option value="Acre - Rio Branco">Acre - Rio Branco</option>
-                        <option value="Alagoas - Maceió">Alagoas - Maceió</option>
-                        <option value="Amapá - Macapá">Amapá - Macapá</option>
-                        <option value="Amazonas - Manaus">Amazonas - Manaus</option>
-                        <option value="Bahia - Salvador">Bahia - Salvador</option>
-                        <option value="Ceará - Fortaleza">Ceará - Fortaleza</option>
-                        <option value="Espírito Santo - Vitória">Espírito Santo - Vitória</option>
-                        <option value="Goiás - Goiânia">Goiás - Goiânia</option>
-                        <option value="Maranhão - São Luís">Maranhão - São Luís</option>
-                        <option value="Mato Grosso - Cuiabá">Mato Grosso - Cuiabá</option>
-                        <option value="Mato Grosso do Sul - Campo Grande">Mato Grosso do Sul - Campo Grande</option>
-                        <option value="Minas Gerais - Belo Horizonte">Minas Gerais - Belo Horizonte</option>
-                        <option value="Pará - Belém">Pará - Belém</option>
-                        <option value="Paraíba - João Pessoa">Paraíba - João Pessoa</option>
-                        <option value="Paraná - Curitiba">Paraná - Curitiba</option>
-                        <option value="Pernambuco - Recife">Pernambuco - Recife</option>
-                        <option value="Piauí - Teresina">Piauí - Teresina</option>
-                        <option value="Rio de Janeiro - Rio de Janeiro">Rio de Janeiro - Rio de Janeiro</option>
-                        <option value="Rio Grande do Norte - Natal">Rio Grande do Norte - Natal</option>
-                        <option value="Rio Grande do Sul - Porto Alegre">Rio Grande do Sul - Porto Alegre</option>
-                        <option value="Rondônia - Porto Velho">Rondônia - Porto Velho</option>
-                        <option value="Roraima - Boa Vista">Roraima - Boa Vista</option>
-                        <option value="Santa Catarina - Florianópolis">Santa Catarina - Florianópolis</option>
-                        <option value="São Paulo - São Paulo">São Paulo - São Paulo</option>
-                        <option value="Sergipe - Aracaju">Sergipe - Aracaju</option>
-                        <option value="Tocantins - Palmas">Tocantins - Palmas</option>
-                        <option value="Distrito Federal - Brasília">Distrito Federal - Brasília</option>
-                    </select>
-                </label>
-            </div>
+            <legend>Dados</legend>
+            <label for="">CPF:</label>
+            {{ form.cpf }}
+            <label for="">Phone:</label>
+            {{ form.phone }}
+            <label for="">Adress:</label>
+            {{ form.adress }}
+            <label for="">Region:</label>
+            {{ form.locate }}
         </fieldset>
 
-
-        <Fieldset>
-            <legend>Links:</legend>
-            <div class="label-content">
-                <label for="email">Email*:</label>
-                <input type="email" name="email" id="email" maxlength="50" required>
-            </div>
-            
-            <div class="label-content">
-                <label for="github">Github:</label>
-                <input type="url" name="github" id="github">
-            </div>
-            
-            <div class="label-content">
-                <label for="lkdin">Linkedin:</label>
-                <input type="url" name="linkedin" id="lkdin">
-            </div>
-        </Fieldset>
-
-
-        <div class="inputs-end">
-            <input type="submit" value="Send">
-            <a href="{% url 'home' %}">Cancel</a>
-            <input type="reset" value="Reset">
-        </div>
+        <fieldset>
+            <legend>Links</legend>
+            <label for="">Email:</label>
+            {{ form.email }}
+            <label for="">Github:</label>
+            {{ form.github }}
+            <label for="">Linkedin:</label>
+            {{ form.linkedin }}
+        </fieldset>
+        
+        <button type="submit">Save</button>
+        <button type="button"><a href="{% url 'list' %}">Cancelar</a></button>
     </form>
 
     {% endblock %}

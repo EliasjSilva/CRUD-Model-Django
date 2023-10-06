@@ -26,6 +26,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'), # Home
     path('List-User/', views.liste, name = 'list'), # Listing
-    path('Form/', views.form, name = 'form'), # Creating
-    path('List-User/User/<int:id>', views.user, name = 'user'), # Reading
+    path('Form/', views.create, name = 'form'), # Creating
+    path('List-User/User/<int:id>/', views.read, name = 'user'), # Reading
+    path('List-User/User/Edit/<int:id>/', views.update, name= 'edit'), # Updating
+    path('List-User/Remove/<int:id>/', views.remove, name= 'remove'), # Deleting
 ]+static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

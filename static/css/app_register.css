@@ -3,3 +3,18 @@
     margin: 0;
     background-color: #8a2be2;
 }
+
+img{
+    width: 150px;
+    border-radius: 10px;
+}
+
+form > fieldset > label{
+    display: block;
+}
+
+form > fieldset textarea{
+    width: 300px;
+    height: 100px;
+    resize: none;
+}

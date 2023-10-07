@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Ubuntu Mono', monospace;
 }
 
 body{
@@ -128,7 +129,7 @@ header {
 header h1 {
     text-align: center;
     padding: 40px 0;
-    text-shadow: #3334 2px 5px 2px;
+    text-shadow: #3338 3px 3px 2px;
 }
 h2 {
     text-align: center;

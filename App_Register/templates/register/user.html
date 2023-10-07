@@ -8,18 +8,91 @@
 {% else %}
 <div class="img"><img src="{% static 'imgs/user-none.svg' %}" alt="imagem de {{user.name}}"> </div>
 {% endif %}
-    
+
 
 <h3>{{user.name}}</h3>
-<h3>Informações Pessoais</h3>
-<p>Birthyear: {{user.date}}</p>
-<p>CPF: {{user.cpf}}</p>
-<p>Email: {{user.email}}</p>
-<p>Phone Number: {{user.phone}}</p>
-<p>Locate: {{user.locate}}</p>
-<p>Adress: {{user.adress}}</p>
-<a href="{% url 'edit' id=user.id %}">Edit</a>
-<a href="{% url 'remove' id=user.id %}">Remove</a>
-<a href="{% url 'list' %}">Voltar</a>
+<div class="user">
+    <fieldset>
+        <legend>Informações Pessoais:</legend>
+        <div class="user-content">
+            <label for=""><span>Gender:</span>
 
+                {{ user.gender }}
+            </label>
+            <label for=""><span>Date:</span>
+
+                {{ user.date }}
+            </label>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Status</legend>
+            <div class="user-content">
+                <label for=""><span>Profession:</span>
+
+                    {{ user.profession }}
+                </label>
+                <label for=""><span>Ocupation:</span>
+
+                    {{ user.ocupation }}
+                </label>
+            </div>
+            <div class="user-content">
+                <label for=""><span>Experience:</span>
+
+                    {{ user.experience }}
+                </label>
+            </div>
+        <!-- <div class="form-content-tech">
+            <label for="">Technologies:</label>
+            {{ form.technologies }}
+        </div> -->
+    </fieldset>
+    <fieldset>
+        <legend>Dados Pessoais</legend>
+        <div class="user-content">
+            <label for=""><span>CPF:</span>
+
+                {{ user.cpf }}
+            </label>
+            <label for=""><span>Phone:</span>
+
+                {{ user.phone }}
+            </label>
+        </div>
+        <div class="user-content">
+            <label for=""><span>Adress:</span>
+
+                {{ user.adress }}
+            </label>
+            <label for=""><span>Region:</span>
+
+                {{ user.locate }}
+            </label>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Links</legend>
+        <div class="user-content">
+            <label for=""><span>Email:</span>
+
+                {{ user.email }}
+            </label>
+            <label for=""><span>Github:</span>
+
+                {{ user.github }}
+            </label>
+            <label for=""><span>Linkedin:</span>
+
+                {{ user.linkedin }}
+            </label>
+        </div>
+    </fieldset>
+</div>
+
+<nav>
+    <a href="{% url 'edit' id=user.id %}">Edit</a>
+    <a href="{% url 'remove' id=user.id %}">Remove</a>
+    <a href="{% url 'list' %}">Voltar</a>
+</nav>
 {% endblock %}

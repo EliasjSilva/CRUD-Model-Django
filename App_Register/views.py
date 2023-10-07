@@ -17,7 +17,7 @@ def liste(request):
 
 # Creating !!
 def create(request):
-    form = forms.UserForm(request.POST or None)
+    form = forms.UserForm(request.POST or None, request.FILES)
     
     if form.is_valid():
         form.save()
@@ -34,7 +34,7 @@ def read(request, id):
 # Updating
 def update(request, id):
     edit = models.User.objects.get(id=id)
-    form = forms.UserForm(request.POST or None, instance= edit)
+    form = forms.UserForm(request.POST or None, request.FILES, instance= edit)
 
     if form.is_valid():
         form.save()

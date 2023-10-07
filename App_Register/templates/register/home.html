@@ -9,21 +9,19 @@
 </head>
 <body>
     
-    <h1>HELLO !!</h1>
-
-    <nav>
-        <a href="{% url 'form' %}">Register New User</a>
-        <a href="{% url 'list' %}">User List</a>
-        <a href="{% url 'home' %}">Home</a>
-    </nav>
+    <header>
+        <h1>APP - CADASTRO DE USUARIOS</h1>
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'list' %}">User List</a>
+            <a href="{% url 'form' %}">Register New User</a>
+        </nav>
+    </header>
     
 {% block content %}
-
+<div class="home"><img src="{% static 'imgs/death.gif' %}" alt=""></div>
 {% endblock %}
 
 
-    <script type="text/javascript">
-        date.max = new Date().toISOString().split("T")[0];
-    </script>
 </body>
 </html>

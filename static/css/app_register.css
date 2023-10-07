@@ -1,20 +1,224 @@
 *{
     padding: 0;
     margin: 0;
-    background-color: #8a2be2;
+    box-sizing: border-box;
 }
 
-img{
+body{
+    background-color: #7A8F9D;
+}
+
+/* *** imgs *** */
+.img{
+    display: flex;
+    justify-content: center;
+}
+.img img{
     width: 150px;
-    border-radius: 10px;
+    border-radius: 10%;
+}
+.home{
+    display: flex;
+    justify-content: center;
+}
+.home img{
+    width: 40%;
+    margin: 40px 0;
+    border-radius: 40%;
+}
+/* *** form *** */
+
+.form-newuser{
+    width: 80%;
+    max-width: 1360px;
+    margin: 0 auto;
+    font-size: 18px;
 }
 
-form > fieldset > label{
+.form-newuser form{
+    margin: 50px 0;
+}
+
+/* *** Fieldsets *** */
+fieldset{
+    padding: 20px 0;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    border-radius: 5px;
+}
+fieldset legend{
+    margin: 0 0 0 20px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* *** Inputs *** */
+input[type=text], input[type=file], input[type=date],input[type=email], select{
+    width: 100%;
+    height: 40px;
+    margin: 10px 0 20px 0;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 18px;
+    background-color: #fff;
+}
+input[type=date]{
+    width: 50%;
+}
+input[type=radio]{
+    margin: 5px 10px 10px 0px;
+    font-weight: lighter;
+}
+
+textarea{
+    resize: none;
+    width: 100%;
+    height: 150px;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #eee;
+    box-shadow: #666 1px 2px 5px;
+    border-radius: 5px;
+}
+/* ***  fieldset Content  *** */
+.form-content {
+    width: 45%;
+}
+
+.form-content > label{
+    font-weight: bold;
     display: block;
 }
 
-form > fieldset textarea{
-    width: 300px;
-    height: 100px;
-    resize: none;
+fieldset:nth-child(3){
+    display: flex;
+    flex-direction: column;
+}
+.content{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+.form-content-tech{
+    margin: 0px 30px 20px 30px;
+}
+.form-content-tech > label{
+    font-weight: bold;
+}
+.form-content-tech .checkbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    width: 80px;
+    height: 20px;
+    margin: 5px 0;
+    padding: 5px;
+}
+
+/* *** Home *** */
+header {
+    background-image: linear-gradient(to bottom, #9da2a5, #889299, #7A8F9D);
+}
+header h1 {
+    text-align: center;
+    padding: 40px 0;
+    text-shadow: #3334 2px 5px 2px;
+}
+
+/*  BUTTONS */
+nav{
+    text-align: center;
+    padding: 20px 0;
+}
+nav a{
+    text-decoration: none;
+    box-shadow: #666 1px 1px 4px;
+    border-radius: 10px;
+    background-color: #8a2be2;
+    margin: 10px 15px;
+    padding: 10px;
+    font-weight: bold;
+    color: #fff;
+}
+nav a:hover{
+    box-shadow: #666 1px 1px 8px;
+    border-radius: 12px;
+    background-color: #8723e4;
+}
+
+/* *** List *** */
+
+.table-users-list{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    max-width: 1360px;
+    margin: 40px auto;
+}
+.table-users-list h2{
+    text-align: center;
+    margin: 0 0 40px 0;
+}
+table{
+    background-color: #eeec;
+    width: 100%;
+    max-width: 1360px;
+}
+table td, th{
+    padding: 10px 15px;
+}
+.table-users-list table, tr{
+    border: 5px solid #7A8F9D;
+    border-collapse: collapse;
+}
+.table-users-list table th:nth-child(n+2){
+    text-align: start;
+}
+
+/* *** BUTTONS TABLE */
+.table-users-list table a{
+    text-decoration: none;
+    border: 1px solid #eee;
+    background-color: #8a2be2;
+    padding: 3px;
+    color: #fff;
+    border-radius: 5px;
+}
+.table-users-list table a:hover{
+    border-radius: 7px;
+    background-color: #8414ec;
+}
+/*  *** User *** */
+body > h3 {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 32px;
+}
+.user{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.user fieldset{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eeec;
+    
+}
+.user fieldset .user-content{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.user fieldset .user-content span{
+    font-weight: bold;
+    padding: 10px 0 ;
 }

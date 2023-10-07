@@ -1,10 +1,11 @@
 from django.db import models
+from setup import settings
 
 # Create your models here.
 # from django.contrib.postgres.fields import ArrayField
 
 # 'choices' must be an iterable containing (actual value, human readable name) tuples.
-DEFAULT = 'No Registered'
+DEFAULT = 'Not Registered'
 
 class User(models.Model):
     # id_user = models.AutoField(primary_key=True)
@@ -34,9 +35,10 @@ class User(models.Model):
         ('Html', 'Html'),
         ('Css', 'Css'),
         ('JavaScript', 'JavaScript'),
+        ('Python', 'Python'),
+        ('Ruby', 'Ruby'),
         ('PHP', 'PHP'),
         ('C#', 'C#'),
-        ('Python', 'Python'),
         ('Java', 'Java'),
     ]
 
@@ -73,13 +75,13 @@ class User(models.Model):
     # Person
     name = models.CharField(max_length=150)
     photo = models.ImageField(upload_to='photos', blank=True, null=True)
-    gender = models.CharField(max_length=100, choices=GENDER, blank=True, null=True)
+    gender = models.CharField(max_length=100, choices=GENDER, default=None)
     date = models.DateField()
 
     # Status
-    profession = models.CharField(max_length=100, choices=PROFESSION, null=True)
-    ocupation = models.CharField(max_length=100, choices=OCUPATION, null=True)
-    technologies = models.CharField(max_length=100, choices=TECHNOLOGIES, blank=True, null=True)
+    profession = models.CharField(max_length=100, choices=PROFESSION, default=None, null=True)
+    ocupation = models.CharField(max_length=100, choices=OCUPATION, default=None, null=True)
+    technologies = models.CharField(max_length=100, choices=TECHNOLOGIES, null=True ,default=DEFAULT, blank=True)
     experience = models.TextField(blank=True, null=True)
 
     # Dados
@@ -92,8 +94,8 @@ class User(models.Model):
 
     # Links
     email = models.EmailField()
-    github = models.URLField(blank=True, null=True)
-    linkedin = models.URLField(blank=True, null=True)
+    github = models.URLField(blank=True, null=True, default=DEFAULT)
+    linkedin = models.URLField(blank=True, null=True, default=DEFAULT)
 
     created_at = models.DateTimeField(auto_now_add=True, null=True)
 

@@ -16,7 +16,10 @@
         </tr>
         {% for user in users %}
         <tr>
-            <td><li><a href="{% url 'user' id=user.id %}">View</a> | <li><a href="{% url 'remove' id=user.id %}">Remove</a></td>
+            <td>
+                <span><a href="{% url 'user' id=user.id %}">View</a> </span>
+                <span><a href="{% url 'remove' id=user.id %}">Remove</a></span>
+            </td>
             <td>{{user.name}}</a></td>
             <td>{{user.profession}}</td>
             <td>{{user.ocupation}}</td>

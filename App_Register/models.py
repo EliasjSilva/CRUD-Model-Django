@@ -79,23 +79,23 @@ class User(models.Model):
     date = models.DateField()
 
     # Status
-    profession = models.CharField(max_length=100, choices=PROFESSION, default=None, null=True)
-    ocupation = models.CharField(max_length=100, choices=OCUPATION, default=None, null=True)
-    technologies = models.CharField(max_length=100, choices=TECHNOLOGIES, null=True ,default=DEFAULT, blank=True)
+    profession = models.CharField(max_length=100, choices=PROFESSION, null=True) #default=None
+    ocupation = models.CharField(max_length=100, choices=OCUPATION, null=True) #default=None
+    # technologies = models.CharField(max_length=100, choices=TECHNOLOGIES, null=True ,default=None, blank=True)
     experience = models.TextField(blank=True, null=True)
 
     # Dados
     cpf = models.CharField(max_length= 11, null=True)
     phone = models.CharField(max_length=11, null=True)
     adress = models.CharField(max_length=155, blank=True, null=True)
-    locate = models.CharField(max_length=100, choices=LOCATE, default=DEFAULT)
+    locate = models.CharField(max_length=100, choices=LOCATE) #default=None
     # ArrayField(
         # models.CharField(choices=LOCATE, max_length=100, blank=True, null=True),
 
     # Links
     email = models.EmailField()
-    github = models.URLField(blank=True, null=True, default=DEFAULT)
-    linkedin = models.URLField(blank=True, null=True, default=DEFAULT)
+    github = models.URLField(blank=True, null=True, default=None)
+    linkedin = models.URLField(blank=True, null=True, default=None)
 
     created_at = models.DateTimeField(auto_now_add=True, null=True)
 

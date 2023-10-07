@@ -16,6 +16,7 @@ body{
 .img img{
     width: 150px;
     border-radius: 10%;
+    margin: 40px 0 0 0;
 }
 .home{
     display: flex;
@@ -46,7 +47,7 @@ fieldset{
     display: flex;
     justify-content: space-around;
     align-items: start;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 fieldset legend{
     margin: 0 0 0 20px;
@@ -129,13 +130,17 @@ header h1 {
     padding: 40px 0;
     text-shadow: #3334 2px 5px 2px;
 }
+h2 {
+    text-align: center;
+    margin: 100px 0;
+}
 
 /*  BUTTONS */
 nav{
     text-align: center;
     padding: 20px 0;
 }
-nav a{
+nav a,form .form-buttons-end button a, form .form-buttons-end button{
     text-decoration: none;
     box-shadow: #666 1px 1px 4px;
     border-radius: 10px;
@@ -145,10 +150,11 @@ nav a{
     font-weight: bold;
     color: #fff;
 }
-nav a:hover{
-    box-shadow: #666 1px 1px 8px;
+nav a:hover,form .form-buttons-end button a:hover, form .form-buttons-end button:hover{
+    box-shadow: #666 2px 2px 10px;
     border-radius: 12px;
-    background-color: #8723e4;
+    background-color: #8014e6;
+    cursor: pointer;
 }
 
 /* *** List *** */
@@ -177,7 +183,7 @@ table td, th{
     border: 5px solid #7A8F9D;
     border-collapse: collapse;
 }
-.table-users-list table th:nth-child(n+2){
+.table-users-list table th:nth-child(n+2), .table-users-list table tr:nth-child(n+2) {
     text-align: start;
 }
 
@@ -189,6 +195,13 @@ table td, th{
     padding: 3px;
     color: #fff;
     border-radius: 5px;
+    text-align: center;
+}
+.table-users-list table span{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5px 0;
 }
 .table-users-list table a:hover{
     border-radius: 7px;

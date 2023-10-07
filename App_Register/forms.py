@@ -9,11 +9,11 @@ class UserForm(forms.ModelForm):
         fields = '__all__'
 
         widgets = {
-            # 'name': forms.TextInput(
-            #     attrs={
-            #         'placeholder': 'Enter your Full name',
-            #         }
-            #     ),
+            'name': forms.TextInput(
+                attrs={
+                    'placeholder': 'Enter your Full name',
+                    }
+                ),
             'gender': forms.RadioSelect(
                 attrs={
                     'type':'radio',

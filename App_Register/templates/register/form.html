@@ -6,15 +6,15 @@
             <fieldset>
                 <legend>Perfil</legend>
                 <div class="form-content">
-                    <label for="">Nome:</label>
+                    <label for="">Nome*:</label>
                     {{ form.name }}
                     <label for="">Photo:</label>
                     {{ form.photo }}
                 </div>
                 <div class="form-content">
-                    <label for="">Gender:</label>
+                    <label for="">Gender*:</label>
                     {{ form.gender }}
-                    <label for="">Date:</label>
+                    <label for="">Date*:</label>
                     {{ form.date }}
                 </div>
             </fieldset>
@@ -22,9 +22,9 @@
                 <legend>Status</legend>
                 <div class="content">
                     <div class="form-content">
-                        <label for="">Profession:</label>
+                        <label for="">Profession*:</label>
                         {{ form.profession }}
-                        <label for="">Ocupation:</label>
+                        <label for="">Ocupation*:</label>
                         {{ form.ocupation }}
                     </div>
                     <div class="form-content">
@@ -40,22 +40,22 @@
             <fieldset>
                 <legend>Dados</legend>
                 <div class="form-content">
-                    <label for="">CPF:</label>
+                    <label for="">CPF*:</label>
                     {{ form.cpf }}
-                    <label for="">Phone:</label>
+                    <label for="">Phone*:</label>
                     {{ form.phone }}
                 </div>
                 <div class="form-content">
                     <label for="">Adress:</label>
                     {{ form.adress }}
-                    <label for="">Region:</label>
+                    <label for="">Region*:</label>
                     {{ form.locate }}
                 </div>
             </fieldset>
             <fieldset>
                 <legend>Links</legend>
                 <div class="form-content-links">
-                    <label for="">Email:</label>
+                    <label for="">Email*:</label>
                     {{ form.email }}
                     <label for="">Github:</label>
                     {{ form.github }}
@@ -66,7 +66,7 @@
         
             <div class="form-buttons-end">
                 <button type="submit">Save</button>
-                <button type="button"><a href="{% url 'list' %}">Cancelar</a></button>
+                <button type="button"><a href="{% url 'list' %}">Cancel</a></button>
             </div>
         </form>
     </div>

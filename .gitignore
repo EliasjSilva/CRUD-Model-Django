@@ -1,7 +1,7 @@
 *.pyc
 *~
 __pycache__
-DS.Store
+.DS_Store
 
 PIL
 Pillow-10.0.1.dist-info

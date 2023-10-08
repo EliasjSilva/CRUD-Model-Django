@@ -1,0 +1,27 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<div class="form-newuser">
+    <form  method="POST" enctype="multipart/form-data" target="_self" autocomplete="on"> {% csrf_token %}
+    
+        <fieldset>
+            <legend>Login:</legend>
+            <label for="username">Nome de Usúario:</label>
+            <input type="text" name="username" id="username" required>
+            <label for="password">Senha:</label>
+            <input type="password" name="password" id="password" required>
+            <button type="submit">Login</button>
+        </fieldset>
+    
+        <!-- {% if request.get_full_path == "/account/signup" %}
+        <a href="">Já tenho uma conta</a>
+        {% else %}
+        <a href="">Cadastrar novo Usúario</a>
+        {% endif %} -->
+    
+    </form>
+</div>
+
+
+{% endblock %}
